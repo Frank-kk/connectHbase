@@ -1,0 +1,13 @@
+
+import happybase
+ 
+connection = happybase.Connection('localhost')
+print connection.tables()
+
+table = connection.table('my_table')
+
+for key, value in table.scan():
+    print key, value
+    
+row = table.row('www.test4.com')
+print row
